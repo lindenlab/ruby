@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM registry.docker/buildpack-deps:jessie
 
 ENV RUBY_MAJOR 2.1
 ENV RUBY_VERSION 2.1.5
