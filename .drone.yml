@@ -1,0 +1,57 @@
+image: registry.docker/buildpack-deps:scm
+volumes:
+  - /var/run/docker.sock
+script:
+  - docker build -t registry.docker/ruby:1.9.3-p551 1.9
+  - docker tag -f registry.docker/ruby:1.9.3-p551 registry.docker/ruby:1.9.3
+  - docker tag -f registry.docker/ruby:1.9.3-p551 registry.docker/ruby:1.9
+  - docker tag -f registry.docker/ruby:1.9.3-p551 registry.docker/ruby:1
+  - docker build -t registry.docker/ruby:1.9.3-p551-onbuild 1.9/onbuild
+  - docker tag -f registry.docker/ruby:1.9.3-p551-onbuild registry.docker/ruby:1.9.3-onbuild
+  - docker tag -f registry.docker/ruby:1.9.3-p551-onbuild registry.docker/ruby:1.9-onbuild
+  - docker tag -f registry.docker/ruby:1.9.3-p551-onbuild registry.docker/ruby:1-onbuild
+  - docker build -t registry.docker/ruby:1.9.3-p551-slim 1.9/slim
+  - docker tag -f registry.docker/ruby:1.9.3-p551-slim registry.docker/ruby:1.9.3-slim
+  - docker tag -f registry.docker/ruby:1.9.3-p551-slim registry.docker/ruby:1.9-slim
+  - docker tag -f registry.docker/ruby:1.9.3-p551-slim registry.docker/ruby:1-slim
+  - docker build -t registry.docker/ruby:1.9.3-p551-wheezy 1.9/wheezy
+  - docker tag -f registry.docker/ruby:1.9.3-p551-wheezy registry.docker/ruby:1.9.3-wheezy
+  - docker tag -f registry.docker/ruby:1.9.3-p551-wheezy registry.docker/ruby:1.9-wheezy
+  - docker tag -f registry.docker/ruby:1.9.3-p551-wheezy registry.docker/ruby:1-wheezy
+  - docker build -t registry.docker/ruby:2.0.0-p598 2.0
+  - docker tag -f registry.docker/ruby:2.0.0-p598 registry.docker/ruby:2.0.0
+  - docker tag -f registry.docker/ruby:2.0.0-p598 registry.docker/ruby:2.0
+  - docker build -t registry.docker/ruby:2.0.0-p598-onbuild 2.0/onbuild
+  - docker tag -f registry.docker/ruby:2.0.0-p598-onbuild registry.docker/ruby:2.0.0-onbuild
+  - docker tag -f registry.docker/ruby:2.0.0-p598-onbuild registry.docker/ruby:2.0-onbuild
+  - docker build -t registry.docker/ruby:2.0.0-p598-slim 2.0/slim
+  - docker tag -f registry.docker/ruby:2.0.0-p598-slim registry.docker/ruby:2.0.0-slim
+  - docker tag -f registry.docker/ruby:2.0.0-p598-slim registry.docker/ruby:2.0-slim
+  - docker build -t registry.docker/ruby:2.0.0-p598-wheezy 2.0/wheezy
+  - docker tag -f registry.docker/ruby:2.0.0-p598-wheezy registry.docker/ruby:2.0.0-wheezy
+  - docker tag -f registry.docker/ruby:2.0.0-p598-wheezy registry.docker/ruby:2.0-wheezy
+  - docker build -t registry.docker/ruby:2.1.5 2.1
+  - docker tag -f registry.docker/ruby:2.1.5 registry.docker/ruby:2.1
+  - docker build -t registry.docker/ruby:2.1.5-onbuild 2.1/onbuild
+  - docker tag -f registry.docker/ruby:2.1.5-onbuild registry.docker/ruby:2.1-onbuild
+  - docker build -t registry.docker/ruby:2.1.5-slim 2.1/slim
+  - docker tag -f registry.docker/ruby:2.1.5-slim registry.docker/ruby:2.1-slim
+  - docker build -t registry.docker/ruby:2.1.5-wheezy 2.1/wheezy
+  - docker tag -f registry.docker/ruby:2.1.5-wheezy registry.docker/ruby:2.1-wheezy
+  - docker build -t registry.docker/ruby:2.2.0 2.2
+  - docker tag -f registry.docker/ruby:2.2.0 registry.docker/ruby:2.2
+  - docker tag -f registry.docker/ruby:2.2.0 registry.docker/ruby:2
+  - docker tag -f registry.docker/ruby:2.2.0 registry.docker/ruby:latest
+  - docker build -t registry.docker/ruby:2.2.0-onbuild 2.2/onbuild
+  - docker tag -f registry.docker/ruby:2.2.0-onbuild registry.docker/ruby:2.2-onbuild
+  - docker tag -f registry.docker/ruby:2.2.0-onbuild registry.docker/ruby:2-onbuild
+  - docker tag -f registry.docker/ruby:2.2.0-onbuild registry.docker/ruby:onbuild
+  - docker build -t registry.docker/ruby:2.2.0-slim 2.2/slim
+  - docker tag -f registry.docker/ruby:2.2.0-slim registry.docker/ruby:2.2-slim
+  - docker tag -f registry.docker/ruby:2.2.0-slim registry.docker/ruby:2-slim
+  - docker tag -f registry.docker/ruby:2.2.0-slim registry.docker/ruby:slim
+  - docker build -t registry.docker/ruby:2.2.0-wheezy 2.2/wheezy
+  - docker tag -f registry.docker/ruby:2.2.0-wheezy registry.docker/ruby:2.2-wheezy
+  - docker tag -f registry.docker/ruby:2.2.0-wheezy registry.docker/ruby:2-wheezy
+  - docker tag -f registry.docker/ruby:2.2.0-wheezy registry.docker/ruby:wheezy
+  - docker push registry.docker/ruby
