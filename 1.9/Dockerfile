@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM registry.docker/buildpack-deps:jessie
 
 ENV RUBY_MAJOR 1.9
 ENV RUBY_VERSION 1.9.3-p551
